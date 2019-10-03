@@ -4,20 +4,17 @@
 * Strona: [https://chapel-lang.org/](https://chapel-lang.org/)
 * Dokumentacja [https://chapel-lang.org/docs/](https://chapel-lang.org/docs/) 
 
-### Uruchomienie na Zeusie
-* Tryb interaktywny
+### Uruchomienie interaktywne  na Zeusie
+* Tryb interaktywny - tutaj prosimy o 1 węzeł i 12 corów 
 ```shell
  [plgrycerz@zeus ~]$ srun -N 1 --ntasks-per-node=12 -p plgrid  --pty /bin/bash
+```
+* Ustawiamy środowisko 
+```shell
  [plgrycerz@n1024-amd mytest]$ module load plgrid/tools/chapel/1.20.0
  [plgrycerz@n1024-amd mytest]$ export  GASNET_PHYSMEM_MAX='128MB'
 ```
-* Tryb wsadowy:
-
----
-
-
-
-## Hello world! 
+* Tworzymy plik Hello world! 
 
 ```chapel
 use Memory;  // for physicalMemory()

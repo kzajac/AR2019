@@ -11,7 +11,7 @@
  [plgrycerz@n1024-amd mytest]$ module load plgrid/tools/chapel/1.20.0
  [plgrycerz@n1024-amd mytest]$ export  GASNET_PHYSMEM_MAX='128MB'
 ```
-*Tryb wsadowy:
+* Tryb wsadowy:
 
 ---
 

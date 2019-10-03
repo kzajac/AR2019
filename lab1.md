@@ -42,10 +42,12 @@ $ chpl -o hello_world hello_world.chpl
  ```shell
 $ ./hello_world -nl 1
 ```
+Parametr -nl to specyfikuje ilość "jednostek maszynowych". Zwykle jednostka 
+to jeden węzeł wielocorowy o wspólnej pamięci [https://chapel-lang.org/docs/primers/locales.html]
 ### Uruchomienie wsadowe  na Zeusie
 
 ### Zadanie
-- uruchomić program hello z większym parametrem 
+- uruchomić program hello z większym parametrem nl
 ```shell
 $ ./hello_world -nl 3
 ```

@@ -4,6 +4,7 @@
 * Strona: [https://chapel-lang.org/](https://chapel-lang.org/)
 * Dokumentacja [https://chapel-lang.org/docs/](https://chapel-lang.org/docs/) 
 
+## Quickstart
 ### Uruchomienie interaktywne  na Zeusie
 * Tryb interaktywny - tutaj prosimy o 1 węzeł i 12 corów 
 ```shell
@@ -46,7 +47,7 @@ Parametr -nl to specyfikuje ilość "jednostek maszynowych". Zwykle jednostka
 to jeden węzeł wielocorowy o wspólnej pamięci [https://chapel-lang.org/docs/primers/locales.html](https://chapel-lang.org/docs/primers/locales.html)
 ### Uruchomienie wsadowe  na Zeusie
 
-### Zadanie
+### Cwiczenie 1
 - uruchomić program hello z większym parametrem nl na zaalokowanym jednym nodzie. Zaobserwować, co się stanie. 
 ```shell
 $ ./hello_world -nl 3
@@ -56,3 +57,8 @@ $ ./hello_world -nl 12
 ```
 - zaalokować 2 węzły po 6 corów i uruchomić program hello z różnymi parametrami -nl. Zaobserwować, co się stanie
 ---
+## Data Parallelizm
+
+W języku Chapel mamy wsparcie dla dekompozycji domenowej oraz dekompozycji funkcjonalnej.  
+Na tym laboratorium zajmiemy się dekompozycją domenową (dzielimy dane).
+

@@ -62,3 +62,8 @@ $ ./hello_world -nl 12
 W języku Chapel mamy wsparcie dla dekompozycji domenowej oraz dekompozycji funkcjonalnej.  
 Na tym laboratorium zajmiemy się dekompozycją domenową (dzielimy dane).
 
+### pętla forall
+
+Uruchomić program [https://github.com/chapel-lang/chapel/blob/master/test/release/examples/hello3-datapar.chpl](https://github.com/chapel-lang/chapel/blob/master/test/release/examples/hello3-datapar.chpl)
+
+

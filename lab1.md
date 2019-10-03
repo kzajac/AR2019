@@ -38,10 +38,19 @@ writeln();
 ```shell
 $ chpl -o hello_world hello_world.chpl
 ```
- ### Uruchomienie na jednym nodzie (wiele corów)
+ ### Uruchomienie korzytające z jednego noda jako całości (wiele corów)
  ```shell
 $ ./hello_world -nl 1
 ```
+### Uruchomienie wsadowe  na Zeusie
 
-
+### Zadanie
+- uruchomić program hello z większym parametrem 
+```shell
+$ ./hello_world -nl 3
+```
+```shell
+$ ./hello_world -nl 12
+```
+- zaalokować 2 węzły po 6 corów i uruchomić program hello z różnymi parametrami -nl
 ---

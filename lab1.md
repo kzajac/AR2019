@@ -1,86 +1,21 @@
 <!-- class: center, middle, inverse -->
 
-## Krótki tutorial po MPI
+## Chapel
 
-### Konfiguracja
-
-* Przykłady: `git clone https://github.com/kfigiela/tpr_lab.git -b lab1`
-* Tworzymy plik `allnodes` (tzw. machinefile)
-* Dla zainteresowanych – dostępne są dwie implementacje MPI: OpenMPI i MPICH2 (domyślna). Aktywacja OpenMPI:
+### Uruchomienie na Zeusie
 
 ```shell
 export PATH=/usr/lib64/openmpi/bin:$PATH
 export LD_LIBRARY_PATH=/usr/lib64/openmpi/lib
 export PYTHONPATH=/usr/lib64/python2.7/site-packages/openmpi:/usr/lib64/python2.7/site-packages/openmpi
 ```
-* Uruchamianie: `mpiexec`, warto zajrzeć do `man mpiexec`
+* Uruchamianie: 
 
 ---
 
-## Hello world! w Pythonie
 
-* Dokumentacja mpi4py: [http://mpi4py.scipy.org/docs/usrman/index.html](http://mpi4py.scipy.org/docs/usrman/index.html)
-* API: [http://mpi4py.scipy.org/docs/apiref/index.html](http://mpi4py.scipy.org/docs/apiref/index.html)
-* Dobry tutorial: [https://wiki.gwdg.de/index.php/Mpi4py](https://wiki.gwdg.de/index.php/Mpi4py)
 
-```python
-#!/usr/bin/env python
-from mpi4py import MPI
-import socket
-
-comm = MPI.COMM_WORLD
-print("hello world")
-print("my rank is: %d, at node %s"%(comm.rank, socket.gethostname()))
-```
-### Uruchomienie
-```
-$ chmod +x hello_world.py
-$ mpiexec -machinefile ./allnodes -np [liczba procesów] ./hello_world.py
-```
-
----
-
-## Komunikacja w Pythonie
-
-```python
-#!/usr/bin/env python
-from mpi4py import MPI
-comm = MPI.COMM_WORLD
-rank = comm.Get_rank()
-
-if rank == 0:
-   data = ('abc',123)
-   comm.send(data, dest=1)
-elif rank == 1:
-   data = comm.recv(source=0)
-   print data
-else:
-   print "Expected only two nodes"
-```
-
----
-## Hello world! w Fortranie ;-)
-
-```fortran
-  program hello
-
-  include 'mpif.h'
-  integer rank, size, ierror, tag, status(MPI_STATUS_SIZE)
-
-  call MPI_INIT(ierror)
-  call MPI_COMM_SIZE(MPI_COMM_WORLD, size, ierror)
-  call MPI_COMM_RANK(MPI_COMM_WORLD, rank, ierror)
-  print*, 'node', rank, ': Hello world'
-  call MPI_FINALIZE(ierror)
-  end
-```
-### Kompilacja
-```shell
-$ mpif90 hello_world.f90
-```
-
----
-## Hello world! w C
+## Hello world! 
 
 * Dokumentacja i standard: [mcs.anl.gov/research/projects/mpi](http://www.mcs.anl.gov/research/projects/mpi/)
 * Tutorial [mpitutorial.com](http://mpitutorial.com/) i przykłady [github.com/wesleykendall/mpitutorial](https://github.com/wesleykendall/mpitutorial)

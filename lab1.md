@@ -3,13 +3,13 @@
 ## Chapel
 
 ### Uruchomienie na Zeusie
-
+* Tryb interaktywny
 ```shell
-export PATH=/usr/lib64/openmpi/bin:$PATH
-export LD_LIBRARY_PATH=/usr/lib64/openmpi/lib
-export PYTHONPATH=/usr/lib64/python2.7/site-packages/openmpi:/usr/lib64/python2.7/site-packages/openmpi
+ [plgrycerz@zeus ~]$ srun -N 1 --ntasks-per-node=12 -p plgrid  --pty /bin/bash
+ module load plgrid/tools/chapel/1.20.0
+ export  GASNET_PHYSMEM_MAX='128MB'
 ```
-* Uruchamianie: 
+*Tryb wsadowy:
 
 ---
 
@@ -17,28 +17,30 @@ export PYTHONPATH=/usr/lib64/python2.7/site-packages/openmpi:/usr/lib64/python2.
 
 ## Hello world! 
 
-* Dokumentacja i standard: [mcs.anl.gov/research/projects/mpi](http://www.mcs.anl.gov/research/projects/mpi/)
-* Tutorial [mpitutorial.com](http://mpitutorial.com/) i przykłady [github.com/wesleykendall/mpitutorial](https://github.com/wesleykendall/mpitutorial)
+* Strona: [https://chapel-lang.org/](https://chapel-lang.org/)
+* Dokumentacja [https://chapel-lang.org/docs/](https://chapel-lang.org/docs/) 
 
-```cpp
-#include <stdio.h>
-#include <mpi.h>
+```chapel
+use Memory;  // for physicalMemory()
+config const printLocaleInfo = true;  // permit testing to turn this off
 
-int main (int argc, char * argv[])
-{
-  int rank, size;
+if printLocaleInfo then
+  for loc in Locales do
+    on loc {
+      writeln("locale #", here.id, "...");
+      writeln("  ...is named: ", here.name);
+      writeln("  ...has ", here.numPUs(), " processor cores");
+      writeln("  ...has ", here.physicalMemory(unit=MemUnits.GB, retType=real),
+              " GB of memory");
+      writeln("  ...has ", here.maxTaskPar, " maximum parallelism");
+    }
 
-  MPI_Init (&argc, &argv);  /* starts MPI */
-  MPI_Comm_rank (MPI_COMM_WORLD, &rank);  /* get current process id */
-  MPI_Comm_size (MPI_COMM_WORLD, &size);  /* get number of processes */
-  printf( "Hello world from process %d of %d\n", rank, size );
-  MPI_Finalize();
-  return 0;
-}
+writeln();
+
 ```
 ### Kompilacja
 ```shell
-$ mpicc -o hello_world_c hello_world.c
+$ chpl -o hello_world hello_world.chpl
 ```
 
 

@@ -47,12 +47,12 @@ to jeden węzeł wielocorowy o wspólnej pamięci [https://chapel-lang.org/docs/
 ### Uruchomienie wsadowe  na Zeusie
 
 ### Zadanie
-- uruchomić program hello z większym parametrem nl
+- uruchomić program hello z większym parametrem nl na zaalokowanym jednym nodzie. Zaobserwować, co się stanie. 
 ```shell
 $ ./hello_world -nl 3
 ```
 ```shell
 $ ./hello_world -nl 12
 ```
-- zaalokować 2 węzły po 6 corów i uruchomić program hello z różnymi parametrami -nl
+- zaalokować 2 węzły po 6 corów i uruchomić program hello z różnymi parametrami -nl. Zaobserwować, co się stanie
 ---

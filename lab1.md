@@ -154,7 +154,7 @@ iteracja 10 -1.0 -1.0 -1.0 -1.0 -1.0 -1.0 -1.0 -1.0 -1.0 -1.0
 ```
 ### Cwiczenie 3 -
 
-poprawic poniższy kod, aby działał poprawnie dla dwóch  węzłów
+poprawic poniższy kod, aby działał poprawnie  
 
 ```chapel
 config const n = 10;

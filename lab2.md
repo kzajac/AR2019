@@ -27,7 +27,7 @@ Dla dwóch węzłów:
 * przeanalizować i wykonac kod: [https://github.com/chapel-lang/chapel/blob/master/test/release/examples/hello4-datapar-dist.chpl](https://github.com/chapel-lang/chapel/blob/master/test/release/examples/hello4-datapar-dist.chpl)
 * przykładowy wynik: [https://github.com/chapel-lang/chapel/blob/master/test/release/examples/hello4-datapar-dist.good](https://github.com/chapel-lang/chapel/blob/master/test/release/examples/hello4-datapar-dist.good)
 
-###Cwiczenie 2
+### Cwiczenie 2
 
 Wykonac ponizszy kod dla roznej liczby locale (roznej wartosci parametru nl)
 
@@ -51,6 +51,28 @@ writeln(BA);
 writeln();
 ```
 
+### Cwiczenie 3
+
+Wymyszenie podziału na paski:
+
+```chapel
+use BlockDist;
+config const n = 8;
+const Space = {1..n, 1..n};
+// ustawiamy własny zbiór locale
+var MyLocaleView = {0..#numLocales, 1..1};
+var MyLocales: [MyLocaleView] locale = reshape(Locales, MyLocaleView);
+const BlockSpace2 = Space dmapped Block(boundingBox=Space,
+                                        targetLocales=MyLocales);
+var BA2: [BlockSpace2] int;
+forall ba in BA2 do
+  ba = here.id;
+
+writeln("Block Array Index Map");
+writeln(BA2);
+writeln();
+```
+
 Zadanie
-* Zmodyfikuj i uruchom zadanie z poprzedniego laboratorium na kilku węzłach. 
+* Zmodyfikuj i uruchom zadanie z poprzedniego laboratorium na kilku węzłach uzywajac podziału blokowego. 
 * Wskazówka - slajd 31 i 32 z [https://chapel-lang.org/tutorials/Oct2018/03-DataPar.pdf](https://chapel-lang.org/tutorials/Oct2018/03-DataPar.pdf)

@@ -26,3 +26,7 @@ Dla dwóch węzłów:
 
 * przeanalizować i wykonac kod: [https://github.com/chapel-lang/chapel/blob/master/test/release/examples/hello4-datapar-dist.chpl](https://github.com/chapel-lang/chapel/blob/master/test/release/examples/hello4-datapar-dist.chpl)
 * przykładowy wynik: [https://github.com/chapel-lang/chapel/blob/master/test/release/examples/hello4-datapar-dist.good](https://github.com/chapel-lang/chapel/blob/master/test/release/examples/hello4-datapar-dist.good)
+
+Zadanie
+* Zmodyfikuj i uruchom zadanie z poprzedniego laboratorium na kilku węzłach. 
+* Wskazówka - slajd 31 i 32 z [https://chapel-lang.org/tutorials/Oct2018/03-DataPar.pdf](https://chapel-lang.org/tutorials/Oct2018/03-DataPar.pdf)

@@ -71,7 +71,7 @@ Na tym laboratorium zajmiemy się dekompozycją domenową (dzielimy dane) wielu 
 Przeanalizować i uruchomić program [https://github.com/chapel-lang/chapel/blob/master/test/release/examples/hello3-datapar.chpl](https://github.com/chapel-lang/chapel/blob/master/test/release/examples/hello3-datapar.chpl)
 
 
-Wynik powinien wyjść [https://github.com/chapel-lang/chapel/blob/master/test/release/examples/hello3-datapar-good.txt](https://github.com/chapel-lang/chapel/blob/master/test/release/examples/hello3-datapar-good.txt)
+Wynik powinien wyjść [https://github.com/chapel-lang/chapel/blob/master/test/release/examples/hello3-datapar-good](https://github.com/chapel-lang/chapel/blob/master/test/release/examples/hello3-datapar-good)
 
 ### Cwiczenie 3 
 

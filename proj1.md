@@ -21,7 +21,7 @@ Porównać wydajnosc roznych wersji algorytmu opracowywanego na laboratorium:
    
  * na wykresach należy przedstawić zależność S(p), E(p), gdzie zmienną niezależna jest p
  
- * p wyliczamy poprzez sumę liczby tasków (here.maxTaskPar) ze wszystkich locale 
+ * p wyliczamy poprzez sumę liczby tasków (np. here.maxTaskPar) ze wszystkich locale 
     
   Należy dostarczyć sprawozdanie z wynikami pomiarów oraz wnioski.
 

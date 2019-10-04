@@ -68,8 +68,12 @@ Wymuszenie podziału na paski:
 use BlockDist;
 config const n = 8;
 const Space = {1..n, 1..n};
-// ustawiamy własny zbiór locale
+
+// ustawiamy dwuwymiarowy zakres    
 var MyLocaleView = {0..#numLocales, 1..1};
+
+//przekształcamy tablice Locales na tablice zgodną z wyżej zdefioniowanym zakresem
+// tutaj będzie to jednowymiarowy wiersz [LOCALE0, ..., LOCALEN] 
 var MyLocales: [MyLocaleView] locale = reshape(Locales, MyLocaleView);
 const BlockSpace2 = Space dmapped Block(boundingBox=Space,
                                         targetLocales=MyLocales);

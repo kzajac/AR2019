@@ -6,7 +6,7 @@
 
 ## Quickstart
 ### Uruchomienie interaktywne  na Zeusie
-* Tryb interaktywny - tutaj prosimy o 1 węzeł i 12 corów 
+* Tryb interaktywny - tutaj prosimy o 1 węzeł (node) i 12 rdzeni (core) 
 ```shell
  [plgrycerz@zeus ~]$ srun -N 1 --ntasks-per-node=12 -p plgrid  --pty /bin/bash
 ```
@@ -43,8 +43,11 @@ $ chpl -o hello_world hello_world.chpl
  ```shell
 $ ./hello_world -nl 1
 ```
-Parametr -nl to specyfikuje ilość "jednostek maszynowych". Zwykle jednostka 
-to jeden węzeł wielocorowy o wspólnej pamięci [https://chapel-lang.org/docs/primers/locales.html](https://chapel-lang.org/docs/primers/locales.html)
+Parametr -nl to specyfikuje ilość "jednostek maszynowych" (locale) . 
+
+Zwykle jednostka  to jeden węzeł wielocorowy o wspólnej pamięci [https://chapel-lang.org/docs/primers/locales.html](https://chapel-lang.org/docs/primers/locales.html), ale nie musi tak być.  
+
+
 ### Uruchomienie wsadowe  na Zeusie
 
 ### Cwiczenie 1
@@ -57,13 +60,31 @@ $ ./hello_world -nl 12
 ```
 - zaalokować 2 węzły po 6 corów i uruchomić program hello z różnymi parametrami -nl. Zaobserwować, co się stanie
 ---
-## Data Parallelizm
+## Równoległość Danych (1 węzeł wiele rdzeni)
 
 W języku Chapel mamy wsparcie dla dekompozycji domenowej oraz dekompozycji funkcjonalnej.  
-Na tym laboratorium zajmiemy się dekompozycją domenową (dzielimy dane).
+
+Na tym laboratorium zajmiemy się dekompozycją domenową (dzielimy dane) wielu rdzeniach jednego węzła.
 
 ### Cwiczenie 2
 
 Przeanalizować i uruchomić program [https://github.com/chapel-lang/chapel/blob/master/test/release/examples/hello3-datapar.chpl](https://github.com/chapel-lang/chapel/blob/master/test/release/examples/hello3-datapar.chpl)
+
+### Cwiczenie 3 
+
+Operacje redukcji
+
+
+
+### Cwiczenie 4 
+
+Wyścig
+
+### Cwiczenie 5
+
+Domeny 
+
+### Zadanie 
+
 
 

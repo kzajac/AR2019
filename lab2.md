@@ -6,8 +6,7 @@
 ```shell
  [plgrycerz@zeus ~]$ srun -N 2 --ntasks-per-node=6 -p plgrid  --pty /bin/bash
 ```
-* tryb wsadowy w pliku z opisem zadania ustawiamy opcję:
-## Liczba alokowanych węzłów
+* tryb wsadowy w pliku z opisem zadania ustawiamy opcje:
 ```shell
 #SBATCH -N 2
 ## Liczba zadań per węzeł (domyślnie jest to liczba alokowanych rdzeni na

@@ -53,7 +53,7 @@ writeln();
 
 ### Cwiczenie 3
 
-Wymyszenie podziału na paski:
+Wymuszenie podziału na paski:
 
 ```chapel
 use BlockDist;

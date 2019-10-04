@@ -74,7 +74,7 @@ Przeanalizować i uruchomić program [https://github.com/chapel-lang/chapel/blob
 
 Wynik jaki powinien wyjść [https://github.com/chapel-lang/chapel/blob/master/test/release/examples/hello3-datapar.good](https://github.com/chapel-lang/chapel/blob/master/test/release/examples/hello3-datapar.good)
 
-### Przydział iteracji do tasków (data parallel, 1 węzeł, wiele rdzeni)
+### Przydział iteracji do tasków (data parallel, wersja dla 1 locale = 1 węzeł, wiele rdzeni)
 
 ```chapel
 config const n = 10;

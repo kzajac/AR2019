@@ -45,10 +45,19 @@ var BA: [BlockSpace] int;
 // za elementy tablicy podstawiamy identyfikator locale
 forall ba in BA do
   ba = here.id;
+// poddomeny na konkrentnych locale
+for L in Locales {
+  on L {
+    const indices = BA.localSubdomain();
+     writeln("locale id=",L.id, " localSubdomain=", indices);
+    }
+  }
+
 
 writeln("Block Array Index Map");
 writeln(BA);
 writeln();
+
 ```
 
 ### Cwiczenie 3

@@ -62,19 +62,26 @@ writeln();
 
 ### Cwiczenie 3
 
-Wymuszenie podziału na paski:
+Wymuszenie własnego podziału 
 
 ```chapel
 use BlockDist;
 config const n = 8;
 const Space = {1..n, 1..n};
 
-// ustawiamy dwuwymiarowy zakres    
+// ustawiamy  zakres: pierwszy wymiar: liczba lokale-s, drugi wymiar: 1    
 var MyLocaleView = {0..#numLocales, 1..1};
+ 
+// Inny przykład  pierwszy wymiar: 2, drugi wymiar: połowa z liczby locale-s
+// Uwaga: to zadziała tylko dla parzystej liczby locale-s:
+// zasada: iloczyn wymiarów musi dać liczbę locale-s
+//var hf=Locales.size/2;
+//var MyLocaleView = {1..2, 1..hf};
 
-//przekształcamy tablice Locales na tablice zgodną z wyżej zdefioniowanym zakresem
-// tutaj będzie to jednowymiarowy wiersz [LOCALE0, ..., LOCALEN] 
+
+//przekształcamy tablice Locales na tablice o wymiarach zgodnych z wyżej zdefioniowanym zakresem 
 var MyLocales: [MyLocaleView] locale = reshape(Locales, MyLocaleView);
+
 const BlockSpace2 = Space dmapped Block(boundingBox=Space,
                                         targetLocales=MyLocales);
 var BA2: [BlockSpace2] int;
@@ -85,6 +92,9 @@ writeln("Block Array Index Map");
 writeln(BA2);
 writeln();
 ```
+
+### Wiecej informacji o różnych podziałach
+[https://chapel-lang.org/docs/primers/distributions.html](https://chapel-lang.org/docs/primers/distributions.html)
 
 Zadanie
 * Zmodyfikuj i uruchom zadanie z poprzedniego laboratorium na kilku węzłach uzywajac podziału blokowego. 

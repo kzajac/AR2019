@@ -61,7 +61,7 @@ $ ./hello_world -nl 12
 ```
 - zaalokować 2 węzły po 6 corów i uruchomić program hello z różnymi parametrami -nl. Zaobserwować, co się stanie
 ---
-## Równoległość Danych (1 węzeł wiele rdzeni)
+## Równoległość Danych (wersja 1 locale, 1 węzeł, wiele rdzeni)
 
 W języku Chapel mamy wsparcie dla dekompozycji domenowej oraz dekompozycji funkcjonalnej.  
 

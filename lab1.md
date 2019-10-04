@@ -375,9 +375,10 @@ odd-even
 ### Zadanie 
 - przeczytac tutorial [https://chapel-lang.org/tutorials/Oct2018/03-DataPar.pdf](https://chapel-lang.org/tutorials/Oct2018/03-DataPar.pdf) do 30 slajdu
 
-- przygotowac implementacje swojego problemu (wersja na jeden locale, bez rozpraszania) 
+- przygotowac implementacje swojego problemu używając metody Jakobiego (wersja na jeden locale, bez rozpraszania) 
 - przetestować implementacje na  niewielkich danych
-- ocenić poprawność wyników
+- przygotować podobną implementację problemu używając metody odd-even 
+- ocenić poprawność wyników (testy na niewielkich danych)
 
 
 

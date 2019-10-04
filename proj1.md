@@ -11,8 +11,8 @@ Porównać wydajnosc roznych wersji algorytmu opracowywanego na laboratorium:
 ### Uwagi:
 
  * Zmierzyć(ODDZIELNIE dla RÓŻNYCH rozmiarow problemu):
-       - przyspieszenie S(p)=T(1)/T(p)
-       -  efektywność E(p)= S(p)/p
+    - przyspieszenie S(p)=T(1)/T(p)
+    -  efektywność E(p)= S(p)/p
 
 * Nalezy doswiadczalnie dobrac rozmiar problemu, aby uzyskac przyspieszenie. Generalnie dla wiekszych rozmiarow
  problemu przyspieszenie (i efektywnosc) powinny byc lepsze niz dla mniejszych.

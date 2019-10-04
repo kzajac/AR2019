@@ -13,7 +13,7 @@
 ##węźle)
 #SBATCH --ntasks-per-node=6
 ```
-* uruchomienie - zwykle ustawiamy ilosc locales = ilosc węzłów
+* uruchomienie - zwykle ustawiamy: ilosc locales = ilosc węzłów
 Dla dwóch węzłów:
 
 

@@ -172,8 +172,142 @@ writeln (sk);
 
 Przy ukrytej komunikacji pomiędzy taskami może pojawić się wyścig.
 
-### Domeny 
+```chapel
+config const n = 10;
+//domena jest jednowymiarowy zakres liczb 1..n
+const D= {1..n};
 
+//podzbior domeny
+const DW=D[2..n];
+
+var tab :[D] real;
+for i in D do
+        tab(i)=i;
+
+writeln("tabela wejsciowa:");
+writeln(tab);
+//do kazdego (poza pierwszym) elementu tablicy kopiujemy dane od jego lewego sasiada
+// operacja przeprowadzona rownolegle
+
+forall i in DW  do {
+        tab(i)=tab(i-1);
+
+}
+
+// wynik jest niedeterministryczny, nie znamy kolejnosci iteracji (wyscig)
+writeln("wyscig");
+writeln(tab);
+
+// Rozwiazanie
+for i in D do
+        tab(i)=i;
+
+// operacje zapisujemy w tymczasowej (rowniez wspoldzielonej) tablicy
+
+var tabtemp:[D] real;
+forall i in DW  do
+        tabtemp(i)=tab(i-1);
+
+//na koncu kopiujemy tablice
+
+tab(DW)=tabtemp(DW);
+
+writeln("bez wyscigu");
+writeln(tab);
+
+```
+wynik:
+```shell
+tabela wejsciowa:
+1.0 2.0 3.0 4.0 5.0 6.0 7.0 8.0 9.0 10.0
+wyscig
+1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0
+bez wyscigu
+1.0 1.0 2.0 3.0 4.0 5.0 6.0 7.0 8.0 9.0
+```
+
+###  Kolejnosc przegladania iteracji
+```chapel
+
+//ilosc punktow
+config const n = 10;
+//domena
+const D= {1..n};
+
+//zakres srodka domeny {2..n-1}
+const DW=D.expand(-1);
+
+var tab :[D] real;
+
+// warunki brzegowe
+tab=0;
+writeln(tab);
+
+tab[D.interior(1)]=1;
+writeln(tab);
+
+tab[D.interior(-1)]=1;
+writeln(tab);
+
+var tabtemp:[D] real;
+
+writeln("Jacobi");
+
+for j in 1..10 do {
+        forall i in DW  do
+                tabtemp(i)=(tab(i-1)+tab(i+1))/2;
+
+        tab(DW)=tabtemp(DW);
+
+}
+
+writeln(tab);
+
+// zerowanie tablicy z danymi
+
+tab=0;
+tab[D.interior(1)]=1;
+tab[D.interior(-1)]=1;
+
+//operacje wykonujemy w dwoch petlach - najpierw parzysci, potem nieparzysci
+
+writeln("odd-even");
+
+const allEvens = DW by 2 ;
+const allOdds = DW by 2 align 1;
+
+writeln(allEvens);
+writeln(allOdds);
+
+for j in 1..5 do {
+        forall i in allEvens  do {
+                tab(i)=(tab(i-1)+tab(i+1))/2;
+
+        }
+
+
+        forall i in allOdds  do {
+                tab(i)=(tab(i-1)+tab(i+1))/2;
+
+        }
+}
+
+writeln(tab);
+
+```
+
+Wynik:
+```
+0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0
+0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 1.0
+1.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 1.0
+Jacobi
+1.0 0.764648 0.570312 0.40918 0.335938 0.335938 0.40918 0.570312 0.764648 1.0
+odd-even
+{2..9 by 2}
+{2..9 by 2 align 1}
+1.0 0.757812 0.570312 0.382812 0.335938 0.289062 0.40918 0.529297 0.764648 1.0
+```
 ### Zadanie 
 
 

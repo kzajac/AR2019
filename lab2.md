@@ -96,6 +96,6 @@ writeln();
 ### Wiecej informacji o różnych podziałach
 [https://chapel-lang.org/docs/primers/distributions.html](https://chapel-lang.org/docs/primers/distributions.html)
 
-Zadanie
+### Zadanie
 * Zmodyfikuj i uruchom zadanie z poprzedniego laboratorium na kilku węzłach uzywajac podziału blokowego. 
 * Wskazówka - slajd 31 i 32 z [https://chapel-lang.org/tutorials/Oct2018/03-DataPar.pdf](https://chapel-lang.org/tutorials/Oct2018/03-DataPar.pdf)

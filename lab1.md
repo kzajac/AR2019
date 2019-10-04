@@ -71,12 +71,52 @@ Na tym laboratorium zajmiemy się dekompozycją domenową (dzielimy dane) wielu 
 Przeanalizować i uruchomić program [https://github.com/chapel-lang/chapel/blob/master/test/release/examples/hello3-datapar.chpl](https://github.com/chapel-lang/chapel/blob/master/test/release/examples/hello3-datapar.chpl)
 
 
-Wynik powinien wyjść [https://github.com/chapel-lang/chapel/blob/master/test/release/examples/hello3-datapar.good](https://github.com/chapel-lang/chapel/blob/master/test/release/examples/hello3-datapar.good)
+Wynik jaki powinien wyjść [https://github.com/chapel-lang/chapel/blob/master/test/release/examples/hello3-datapar.good](https://github.com/chapel-lang/chapel/blob/master/test/release/examples/hello3-datapar.good)
 
 ### Cwiczenie 3 
+Przydział iteracji do tasków
 
-Operacje redukcji
+```chapel
+config const n = 10;
+var fs : real;
+var sum: [1..n] real;
 
+sum=0;
+
+// Petla forall rozdziala interacje na taski
+// zwykle jest tyle taskow ile rdzeni mamy na danej maszynie
+
+
+// W przypadku  wsparcia dla data parallel
+// Chapel ukrywa przed uzytkownikiem podzial iteracji pomiedzy taski
+// mozna jednak przeprowadzic test, gdzie kazdy task ma swoja kopie tablicy
+// obserwujac jak tablica jest wypelniana w kolejnych iteracjach widzimy,
+// ktore iteracje naleza do tego samego tasku
+
+forall i in 1..n with (in sum ) do {
+
+        sum(i)=-1;
+        writeln("iteracja " , i, " ", sum);
+}
+
+writeln(sum);
+```
+
+Przykładowy wynik dla dwóch rdzeni:
+```shell
+iteracja 1 -1.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0
+iteracja 6 0.0 0.0 0.0 0.0 0.0 -1.0 0.0 0.0 0.0 0.0
+iteracja 2 -1.0 -1.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0
+iteracja 7 0.0 0.0 0.0 0.0 0.0 -1.0 -1.0 0.0 0.0 0.0
+iteracja 3 -1.0 -1.0 -1.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0
+iteracja 8 0.0 0.0 0.0 0.0 0.0 -1.0 -1.0 -1.0 0.0 0.0
+iteracja 4 -1.0 -1.0 -1.0 -1.0 0.0 0.0 0.0 0.0 0.0 0.0
+iteracja 9 0.0 0.0 0.0 0.0 0.0 -1.0 -1.0 -1.0 -1.0 0.0
+iteracja 5 -1.0 -1.0 -1.0 -1.0 -1.0 0.0 0.0 0.0 0.0 0.0
+iteracja 10 0.0 0.0 0.0 0.0 0.0 -1.0 -1.0 -1.0 -1.0 -1.0
+0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0
+
+```
 
 
 ### Cwiczenie 4 

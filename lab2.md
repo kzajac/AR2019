@@ -2,18 +2,20 @@
 
 ##  Cwiczenie 1
 * zaalokować dwa węzły po 6 rdzeni
-* Tryb interaktywny 
+
+Tryb interaktywny 
 ```shell
  [plgrycerz@zeus ~]$ srun -N 2 --ntasks-per-node=6 -p plgrid  --pty /bin/bash
 ```
-* tryb wsadowy w pliku z opisem zadania ustawiamy opcje:
+
+Tryb wsadowy w pliku z opisem zadania ustawiamy opcje:
 ```shell
 #SBATCH -N 2
 ## Liczba zadań per węzeł (domyślnie jest to liczba alokowanych rdzeni na
 ##węźle)
 #SBATCH --ntasks-per-node=6
 ```
-* uruchomienie - zwykle ustawiamy: ilosc locales = ilosc węzłów.
+Uruchomienie - zwykle ustawiamy: ilosc locales = ilosc węzłów.
 
 Dla dwóch węzłów:
 

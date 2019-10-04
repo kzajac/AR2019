@@ -73,8 +73,7 @@ Przeanalizować i uruchomić program [https://github.com/chapel-lang/chapel/blob
 
 Wynik jaki powinien wyjść [https://github.com/chapel-lang/chapel/blob/master/test/release/examples/hello3-datapar.good](https://github.com/chapel-lang/chapel/blob/master/test/release/examples/hello3-datapar.good)
 
-### Cwiczenie 3 
-Przydział iteracji do tasków
+### Przydział iteracji do tasków (data parallel, 1 węzeł, wiele rdzeni)
 
 ```chapel
 config const n = 10;
@@ -118,7 +117,38 @@ iteracja 10 0.0 0.0 0.0 0.0 0.0 -1.0 -1.0 -1.0 -1.0 -1.0
 
 ```
 
+Tutaj wersja ze wspólną tablicą 
 
+```chapel
+config const n = 10;
+var fs : real;
+var sum: [1..n] real;
+
+sum=0;
+
+forall i in 1..n  do {
+
+        sum(i)=-1;
+        writeln("iteracja " , i, " ", sum);
+}
+
+writeln(sum);
+```
+
+Wynik:
+```shell
+iteracja 1 -1.0 0.0 0.0 0.0 0.0 -1.0 0.0 0.0 0.0 0.0
+iteracja 6 -1.0 -1.0 0.0 0.0 0.0 -1.0 0.0 0.0 0.0 0.0
+iteracja 2 -1.0 -1.0 0.0 0.0 0.0 -1.0 -1.0 0.0 0.0 0.0
+iteracja 7 -1.0 -1.0 -1.0 0.0 0.0 -1.0 -1.0 0.0 0.0 0.0
+iteracja 3 -1.0 -1.0 -1.0 0.0 0.0 -1.0 -1.0 -1.0 0.0 0.0
+iteracja 8 -1.0 -1.0 -1.0 -1.0 0.0 -1.0 -1.0 -1.0 0.0 0.0
+iteracja 4 -1.0 -1.0 -1.0 -1.0 0.0 -1.0 -1.0 -1.0 -1.0 0.0
+iteracja 9 -1.0 -1.0 -1.0 -1.0 -1.0 -1.0 -1.0 -1.0 -1.0 0.0
+iteracja 5 -1.0 -1.0 -1.0 -1.0 -1.0 -1.0 -1.0 -1.0 -1.0 -1.0
+iteracja 10 -1.0 -1.0 -1.0 -1.0 -1.0 -1.0 -1.0 -1.0 -1.0 -1.0
+-1.0 -1.0 -1.0 -1.0 -1.0 -1.0 -1.0 -1.0 -1.0 -1.0
+```
 ### Cwiczenie 4 
 
 Wyścig

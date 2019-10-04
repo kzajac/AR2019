@@ -3,6 +3,7 @@
 ## Chapel
 * Strona: [https://chapel-lang.org/](https://chapel-lang.org/)
 * Dokumentacja [https://chapel-lang.org/docs/](https://chapel-lang.org/docs/) 
+* Tutoriale [https://chapel-lang.org/tutorials.html](https://chapel-lang.org/tutorials.html)
 
 ## Quickstart
 ### Uruchomienie interaktywne  na Zeusie

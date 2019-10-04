@@ -62,7 +62,7 @@ writeln();
 
 ### Cwiczenie 3
 
-Wymuszenie własnego podziału 
+Wymuszenie własnego  podziału 
 
 ```chapel
 use BlockDist;

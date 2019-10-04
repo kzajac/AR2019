@@ -199,6 +199,8 @@ writeln("wyscig");
 writeln(tab);
 
 // Rozwiazanie
+
+// wartosci poczatkowe
 for i in D do
         tab(i)=i;
 

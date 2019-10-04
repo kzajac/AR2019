@@ -122,6 +122,8 @@ Tutaj wersja ze wspólną tablicą
 config const n = 10;
 var sum: [1..n] real;
 
+// wpisanie zer do całej tablicy 
+
 sum=0;
 
 forall i in 1..n  do {
@@ -163,9 +165,9 @@ forall i in 1..n  with (+ reduce sk) do {
 writeln (sk);
 
 ```
-### Cwiczenie 5
+### Wyścig
 
-Domeny 
+### Domeny 
 
 ### Zadanie 
 

@@ -51,6 +51,68 @@ Zwykle jednostka  to jeden węzeł wielordzeniowy o wspólnej pamięci [https://
 
 ### Uruchomienie wsadowe  na Zeusie
 
+Przygotowywujemy plik z opisem zadania:
+
+```bash
+#!/bin/bash -l
+## Nazwa zlecenia
+#SBATCH -J MyHelloJob
+## Liczba alokowanych węzłów
+#SBATCH -N 1
+## Liczba zadań per węzeł (domyślnie jest to liczba alokowanych rdzeni na
+##węźle)
+#SBATCH --ntasks-per-node=6
+## Maksymalny czas trwania zlecenia (format HH:MM:SS)
+#SBATCH --time=00:01:00
+## Specyfikacja partycji
+#SBATCH -p plgrid-testing
+## Plik ze standardowym wyjściem
+#SBATCH --output="output.out"
+## Plik ze standardowym wyjściem błędów
+#SBATCH --error="error.err"
+
+## Zaladowanie modulu Chapel i ustawieniepotrzebnych zmiennych
+
+module load plgrid/tools/chapel/1.20.0
+export  GASNET_PHYSMEM_MAX='128MB'module add
+
+
+## przejscie do katalogu z ktorego wywolany zostal sbatch
+cd $SLURM_SUBMIT_DIR
+chpl -o hello hello.chpl
+# Domyslnie podaje liczbe zaalokowanych wezlow pamietana w zmiennej SLURM_NNODES
+./hello -nl  $SLURM_NNODES
+```
+Uruchamiamy:
+```bash
+[plgrycerz@zeus mytest]$ sbatch run.sh
+Submitted batch job 5603306
+```
+Sprawdzamy stan:
+```bash
+[plgrycerz@zeus mytest]$ squeue
+             JOBID PARTITION     NAME     USER ST       TIME  NODES NODELIST(REASON)
+           5603306 plgrid-te MPIMytes plgrycer  R       0:15      1 n1024-amd
+
+```
+
+Po zakonczeniu zadania ogladame wyjscie i error:
+```bash
+locale #0...
+  ...is named: n1024-amd
+  ...has 6 processor cores
+  ...has 252.238 GB of memory
+  ...has 6 maximum parallelism
+
+```
+```bash
+[plgrycerz@zeus mytest]$ cat error.err
+ plgrid/tools/gcc/5.4.0 loaded.
+ plgrid/tools/intel/18.0.0 loaded.
+ plgrid/tools/impi/2018 loaded.
+ plgrid/tools/chapel/1.20.0 loaded.
+```
+
 ### Cwiczenie 1
 - uruchomić program hello z większym parametrem nl na zaalokowanym jednym nodzie. Zaobserwować, co się stanie. 
 ```shell

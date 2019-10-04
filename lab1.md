@@ -40,13 +40,13 @@ writeln();
 ```shell
 $ chpl -o hello_world hello_world.chpl
 ```
- ### Uruchomienie korzytające z jednego noda jako całości (wiele corów)
+ ### Uruchomienie korzytające z jednego węzła (noda) jako całości (wiele węzłów)
  ```shell
 $ ./hello_world -nl 1
 ```
 Parametr -nl to specyfikuje ilość "jednostek maszynowych" (locale) . 
 
-Zwykle jednostka  to jeden węzeł wielocorowy o wspólnej pamięci [https://chapel-lang.org/docs/primers/locales.html](https://chapel-lang.org/docs/primers/locales.html), ale nie musi tak być.  
+Zwykle jednostka  to jeden węzeł wielordzeniowy o wspólnej pamięci [https://chapel-lang.org/docs/primers/locales.html](https://chapel-lang.org/docs/primers/locales.html), ale nie musi tak być.  
 
 
 ### Uruchomienie wsadowe  na Zeusie
@@ -61,11 +61,13 @@ $ ./hello_world -nl 12
 ```
 - zaalokować 2 węzły po 6 corów i uruchomić program hello z różnymi parametrami -nl. Zaobserwować, co się stanie
 ---
-## Równoległość Danych (wersja 1 locale, 1 węzeł, wiele rdzeni)
+## Równoległość Danych (wersja 1 locale składający się z 1 węzła i wielu rdzeni)
 
 W języku Chapel mamy wsparcie dla dekompozycji domenowej oraz dekompozycji funkcjonalnej.  
 
-Na tym laboratorium zajmiemy się dekompozycją domenową (dzielimy dane) wielu rdzeniach jednego węzła.
+Na tym laboratorium zajmiemy się dekompozycją domenową (dzielimy dane).
+
+Zajmiemy sie opcja: 1 locale zawierajacy 1 węzeł z wieloma rdzeniami.
 
 ### Cwiczenie 2
 
@@ -167,6 +169,8 @@ writeln (sk);
 
 ```
 ### Wyścig
+
+Przy ukrytej komunikacji pomiędzy taskami może pojawić się wyścig.
 
 ### Domeny 
 

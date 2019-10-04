@@ -311,6 +311,11 @@ odd-even
 1.0 0.757812 0.570312 0.382812 0.335938 0.289062 0.40918 0.529297 0.764648 1.0
 ```
 ### Zadanie 
+- przeczytac tutorial [https://chapel-lang.org/tutorials/Oct2018/03-DataPar.pdf](https://chapel-lang.org/tutorials/Oct2018/03-DataPar.pdf) do 30 slajdu
+
+- przygotowac implementacje swojego problemu (wersja na jeden locale, bez rozpraszania) 
+- przetestować implementacje na  niewielkich danych
+- ocenić poprawność wyników
 
 
 

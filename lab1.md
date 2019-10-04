@@ -149,8 +149,8 @@ iteracja 10 -1.0 -1.0 -1.0 -1.0 -1.0 -1.0 -1.0 -1.0 -1.0 -1.0
 ```
 ### Cwiczenie 3 -
 
-poprawic poniższy kod, aby działał poprawnie
- suma od 1 do 10 to 55, a nie 15 
+poprawic poniższy kod, aby działał poprawnie dla dwóch  węzłów
+
 ```chapel
 config const n = 10;
 var sk : real;

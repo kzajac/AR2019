@@ -77,7 +77,6 @@ Wynik jaki powinien wyjść [https://github.com/chapel-lang/chapel/blob/master/t
 
 ```chapel
 config const n = 10;
-var fs : real;
 var sum: [1..n] real;
 
 sum=0;
@@ -121,7 +120,6 @@ Tutaj wersja ze wspólną tablicą
 
 ```chapel
 config const n = 10;
-var fs : real;
 var sum: [1..n] real;
 
 sum=0;
@@ -149,10 +147,22 @@ iteracja 5 -1.0 -1.0 -1.0 -1.0 -1.0 -1.0 -1.0 -1.0 -1.0 -1.0
 iteracja 10 -1.0 -1.0 -1.0 -1.0 -1.0 -1.0 -1.0 -1.0 -1.0 -1.0
 -1.0 -1.0 -1.0 -1.0 -1.0 -1.0 -1.0 -1.0 -1.0 -1.0
 ```
-### Cwiczenie 4 
+### Cwiczenie 3 -
 
-Wyścig
+poprawic poniższy kod, aby działał poprawnie
+ suma od 1 do 10 to 55, a nie 15 
+```chapel
+config const n = 10;
+var sk : real;
 
+forall i in 1..n  with (+ reduce sk) do {
+        sk=i;
+        writeln("i=", i, " sk=", sk);
+}
+
+writeln (sk);
+
+```
 ### Cwiczenie 5
 
 Domeny 

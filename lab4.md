@@ -60,6 +60,36 @@ writeln();
 
 ```
 
+Wynik:
+```bash
+[plgrycerz@n1024-amd ~]$ ./test -nl 2
+locale id=0 localSubdomain={1..4, 1..8}
+locale id=1 localSubdomain={5..8, 1..8}
+Block Array Index Map
+0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0
+1 1 1 1 1 1 1 1
+1 1 1 1 1 1 1 1
+1 1 1 1 1 1 1 1
+1 1 1 1 1 1 1 1
+
+[plgrycerz@n1024-amd ~]$ ./test -nl 4
+locale id=0 localSubdomain={1..4, 1..4}
+locale id=1 localSubdomain={1..4, 5..8}
+locale id=2 localSubdomain={5..8, 1..4}
+locale id=3 localSubdomain={5..8, 5..8}
+Block Array Index Map
+0 0 0 0 1 1 1 1
+0 0 0 0 1 1 1 1
+0 0 0 0 1 1 1 1
+0 0 0 0 1 1 1 1
+2 2 2 2 3 3 3 3
+2 2 2 2 3 3 3 3
+2 2 2 2 3 3 3 3
+2 2 2 2 3 3 3 3
+```
 ### Cwiczenie 3
 
 Wymuszenie własnego  podziału 

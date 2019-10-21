@@ -9,7 +9,7 @@
 ### Uruchomienie interaktywne  na Zeusie
 * Tryb interaktywny - tutaj prosimy o 1 węzeł (node) i 12 rdzeni (core) 
 ```shell
- [plgrycerz@zeus ~]$ srun -N 1 --ntasks-per-node=12 -p plgrid  --pty /bin/bash
+ [plgrycerz@zeus ~]$ srun -N 1 --ntasks-per-node=12 -p plgrid  -t 0:90:0 --pty /bin/bash
 ```
 * Ustawiamy środowisko 
 ```shell
@@ -74,7 +74,7 @@ Przygotowywujemy plik z opisem zadania:
 ## Zaladowanie modulu Chapel i ustawieniepotrzebnych zmiennych
 
 module load plgrid/tools/chapel/1.20.0
-export  GASNET_PHYSMEM_MAX='128MB'module add
+export  GASNET_PHYSMEM_MAX='128MB'
 
 
 ## przejscie do katalogu z ktorego wywolany zostal sbatch

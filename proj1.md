@@ -4,8 +4,8 @@
 
 Porównać wydajnosc roznych wersji algorytmu opracowywanego na laboratorium:
   
- * uruchomionego na jednym wielordzeniowym wezle (1 locale)
- * uruchomionego na wybranej konfiguracji wielowezłowej (np 10 wezlow po 1 rdzeniu)
+ * uruchomionego na jednym wielordzeniowym wezle ze wspólną pamięcią (1 locale)
+ * uruchomionego na wybranej konfiguracji wielowezłowej z rozproszoną pamięcią (np 10 wezlow po 1 rdzeniu)
  * wersje Jakobiego  i wersje odd-even
 
 ### Uwagi:

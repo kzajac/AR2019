@@ -129,3 +129,6 @@ writeln();
 ### Zadanie
 * Zmodyfikuj i uruchom zadanie z poprzedniego laboratorium na kilku węzłach uzywajac dowolnej wersji podziału blokowego. 
 * Wskazówka - slajd 31 i 32 z [https://chapel-lang.org/tutorials/Oct2018/03-DataPar.pdf](https://chapel-lang.org/tutorials/Oct2018/03-DataPar.pdf)
+
+### Projekt
+[https://github.com/kzajac/AR2019/blob/master/proj1.md](https://github.com/kzajac/AR2019/blob/master/proj1.md)

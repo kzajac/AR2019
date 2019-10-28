@@ -17,6 +17,8 @@ Porównać wydajnosc roznych wersji algorytmu opracowywanego na laboratorium:
     - przyspieszenie S(p)=T(1)/T(p)
     -  efektywność E(p)= S(p)/p
  
+ * do pomiaru czasu w jezyku Chapel słóżą <a href=https://chapel-lang.org/docs/primers/timers.html> Timery </a>
+ 
  * aby pomiary byly miarodajne, należy podać uśrednione wyniki z 10 pomiarów
    
  * na wykresach należy przedstawić zależność S(p), E(p), gdzie zmienną niezależna jest p

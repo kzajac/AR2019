@@ -31,7 +31,7 @@ Porównać wydajnosc roznych wersji algorytmu opracowywanego na laboratorium:
 
 * Grupa pon 11:15 - 18.11
 * Grupa sr 14:40 - 20.11
-* Grupa czw 9:35 - 29.11
+* Grupa czw 9:35 - 28.11
 
 Przed upłynięciem tych terminów zajęcia odbywają się w formie nieobowiązkowych konsultacji projektowych (sale laboratoryjne lub p. 3.54) 
 

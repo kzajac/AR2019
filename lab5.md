@@ -1,7 +1,11 @@
 <!-- class: center, middle, inverse -->
 
-###  Cwiczenie 1
 
+
+
+
+###  Cwiczenie 1
+Instrukcji <i> begin<i> zwykle uzywamy, gdy chcemy utworzyć zadanie o nieznanym czasie trwania  
 
 
 Instrukcja <i>begin</i> powoduje utworzenie i asynchroniczne uruchomienie osobnego tasku wykonującego instrukcje po niej następującą: 
@@ -77,7 +81,10 @@ Oh, I forgot to say something!
 
 ```
 ###  Cwiczenie 3
-Instrukcja <i>cobegin </i> tworzy i uruchamia ustalona ilość tasków i czeka na ich zakończenie  
+
+Instrukcja <i>cobegin </i> tworzy i uruchamia ustaloną ilość tasków i czeka na ich zakończenie .
+Zwykle używamy, aby utworzyć pokrewny zestaw heterogenicznych zadań lub mały, stały zestaw homogenicznych zadań.
+Przydatna, gdy zadanie nadrzędne zależy od ukończenia się wszystkich zadań.
 ```chapel
 cobegin {
 /*task 1*/
@@ -107,7 +114,7 @@ See you later!
 ```
 ### Cwiczenie 4
 
-Jeśli w ranach instrukcji cobegin znajdzie się zagnieżdżona instrukcaj begin to cobegin nie czeka na jej zakończenie.
+Jeśli w ramach instrukcji cobegin znajdzie się zagnieżdżona instrukcaj begin to cobegin nie czeka na jej zakończenie.
 ```chapel
 cobegin {
   writeln("Hi!");

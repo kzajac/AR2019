@@ -105,7 +105,42 @@ Hello!
 Greetings2
 See you later!
 ```
+### Cwiczenie 4
 
+Jeśli w ranach instrukcji cobegin znajdzie się zagnieżdżona instrukcaj begin to cobegin nie czeka na jej zakończenie.
+```chapel
+cobegin {
+  writeln("Hi!");
+  printHellos();
+}
+writeln("Sorry, I've gotta leave...");
+
+proc printHellos() {
+  writeln("Beginning...");
+  begin {
+    for i in 1..10 do
+      writeln("Hello!");
+  }
+  writeln("I'm moving on...");
+}
+```
+Przykładowy wynik:
+```bash
+Beginning...
+Hello!
+Hello!
+Hi!
+Hello!
+Hello!
+I'm moving on...
+Hello!
+Hello!
+Hello!
+Sorry, I've gotta leave...
+Hello!
+Hello!
+Hello!
+```
 ### Zadanie
 *
 ### Projekt

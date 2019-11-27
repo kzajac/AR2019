@@ -3,11 +3,11 @@
 ###  Cwiczenie 1
 
 
-Wykonac ponizszy kod 
-
+Ponizszy kod 
+Użycie <i>begin</i> powoduje utworzenie osobnego tasku wykonującego instrukcje po niej następującą: 
 ```chapel
-
-
+begin writeln("hello world");
+writeln("goodbye");
 ```
 
 Wynik:

@@ -113,7 +113,7 @@ See you later!
 ```
 ### Cwiczenie 4
 
-Jeśli w ramach instrukcji cobegin znajdzie się zagnieżdżona instrukcaj begin to cobegin nie czeka na jej zakończenie.
+Jeśli w ramach instrukcji cobegin znajdzie się zagnieżdżona instrukcja begin to cobegin nie czeka na jej zakończenie.
 ```chapel
 cobegin {
   writeln("Hi!");

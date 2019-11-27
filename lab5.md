@@ -76,8 +76,35 @@ Hi there!
 Oh, I forgot to say something!
 
 ```
+###  Cwiczenie 3
+Instrukcja <i>cobegin </i> tworzy i uruchamia ustalona ilość tasków i czeka na ich zakończenie  
+```chapel
+cobegin {
+/*task 1*/
+  writeln("Hi!");
+/*task 2*/
+ sayHello();
+  /* To wykona sie w ramach jednego tasku (task 3)*/
+  {
+    writeln("Greetings1");
+    writeln("Greetings2");
+  }
+}
+/*Program glwony*/
+writeln("See you later!");
 
-
+proc sayHello() {
+  writeln("Hello!");
+}
+```
+Przykładowy wynik:
+```bash
+Hi!
+Greetings1
+Hello!
+Greetings2
+See you later!
+```
 
 ### Zadanie
 *

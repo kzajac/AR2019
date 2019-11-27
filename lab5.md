@@ -141,6 +141,24 @@ Hello!
 Hello!
 Hello!
 ```
+### Cwieczenie 5
+Instrukcja coforall przyporządkowuje każdą iterację do osobnego tasku. 
+```chapel
+config const numTasks = here.maxTaskPar;
+coforall t in 0..#numTasks {
+        writeln("Hello from task ", t, " of ", numTasks);
+}
+writeln("All tasks done");
+
+```
+```bash
+Hello from task 0 of 4
+Hello from task 3 of 4
+Hello from task 1 of 4
+Hello from task 2 of 4
+All tasks done
+
+```
 ### Zadanie
 *
 ### Projekt

@@ -5,7 +5,7 @@
 
 
 ###  Cwiczenie 1
-Instrukcji <i> begin<i> zwykle uzywamy, gdy chcemy utworzyć zadanie o nieznanym czasie trwania  
+Instrukcji <i> begin</i> zwykle uzywamy, gdy chcemy utworzyć zadanie o nieznanym czasie trwania  
 
 
 Instrukcja <i>begin</i> powoduje utworzenie i asynchroniczne uruchomienie osobnego tasku wykonującego instrukcje po niej następującą: 

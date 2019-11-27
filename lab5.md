@@ -5,8 +5,7 @@
 
 
 ###  Cwiczenie 1
-Instrukcji <i> begin</i> zwykle uzywamy, gdy chcemy utworzyć zadanie o nieznanym czasie trwania  
-
+Instrukcji <i> begin</i> zwykle uzywamy, gdy chcemy utworzyć zadanie o nieustrukturyzowanym  czasie trwania  
 
 Instrukcja <i>begin</i> powoduje utworzenie i asynchroniczne uruchomienie osobnego tasku wykonującego instrukcje po niej następującą: 
 ```chapel
@@ -149,7 +148,8 @@ Hello!
 Hello!
 ```
 ### Cwieczenie 5
-Instrukcja coforall przyporządkowuje każdą iterację do osobnego tasku. 
+Instrukcja coforall przyporządkowuje każdą iterację do osobnego tasku. Uzywam, gdy otrzebujemy stworzyć zbiór homogenicznych zadań.
+Przydatna, gdy zadanie nadrzędne zależy od ukończenia się wszystkich zadań.
 ```chapel
 config const numTasks = here.maxTaskPar;
 coforall t in 0..#numTasks {

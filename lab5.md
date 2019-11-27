@@ -3,8 +3,8 @@
 ###  Cwiczenie 1
 
 
-Ponizszy kod 
-Użycie <i>begin</i> powoduje utworzenie osobnego tasku wykonującego instrukcje po niej następującą: 
+
+Instrukcja <i>begin</i> powoduje utworzenie i asynchroniczne uruchomienie osobnego tasku wykonującego instrukcje po niej następującą: 
 ```chapel
 begin writeln("hello world");
 writeln("goodbye");
@@ -21,8 +21,7 @@ hello world
 goodbye
 ```
 ###  Cwiczenie 2
-Ponizszy kod 
-Użycie <i>begin</i> powoduje utworzenie osobnego tasku wykonującego instrukcje po niej następującą: 
+Po <i> begin </i> można uzywać złozonych instrukcji lub funkcji:
 ```chapel
 begin {
   for i in 1..10 do
@@ -44,6 +43,37 @@ proc sayHiBack() {
 
 Wynik:
 ```bash
+Goodbye...
+Well, hello to you too!
+Goodbye...
+Well, hello to you too!
+Goodbye...
+Well, hello to you too!
+Goodbye...
+Well, hello to you too!
+Goodbye...
+Well, hello to you too!
+Goodbye...
+Well, hello to you too!
+Goodbye...
+Well, hello to you too!
+Goodbye...
+Well, hello to you too!
+Goodbye...
+Well, hello to you too!
+Goodbye...
+Well, hello to you too!
+Hi there!
+Hi there!
+Hi there!
+Hi there!
+Hi there!
+Hi there!
+Hi there!
+Hi there!
+Hi there!
+Hi there!
+Oh, I forgot to say something!
 
 ```
 

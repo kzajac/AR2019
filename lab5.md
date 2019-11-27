@@ -12,9 +12,14 @@ writeln("goodbye");
 
 Wynik:
 ```bash
-
+goodbye
+hello world
 ```
-
+lub 
+```bash
+hello world
+goodbye
+```
 
 ### Zadanie
 *

@@ -90,7 +90,7 @@ cobegin {
     writeln("Greetings2");
   }
 }
-/*Program glwony*/
+/*Program glówny*/
 writeln("See you later!");
 
 proc sayHello() {

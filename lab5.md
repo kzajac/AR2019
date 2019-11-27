@@ -148,7 +148,7 @@ Hello!
 Hello!
 ```
 ### Cwieczenie 5
-Instrukcja coforall przyporządkowuje każdą iterację do osobnego tasku. Uzywam, gdy otrzebujemy stworzyć zbiór homogenicznych zadań.
+Instrukcja coforall przyporządkowuje każdą iterację do osobnego tasku. Uzywamy, gdy potrzebujemy stworzyć zbiór homogenicznych zadań.
 Przydatna, gdy zadanie nadrzędne zależy od ukończenia się wszystkich zadań.
 ```chapel
 config const numTasks = here.maxTaskPar;

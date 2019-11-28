@@ -24,9 +24,9 @@ Powyższy link pokazuje jeden ze sposobow zrownoleglania takiego problemu za pom
 
 ### Terminy:
 
-* Grupa pon 11:15 - 13.11
-* Grupa sr 14:40 - 15.11
-* Grupa czw 9:35 - 16.11
+* Grupa pon 11:15 - 13.01.20
+* Grupa sr 14:40 - 15.01.20
+* Grupa czw 9:35 - 16.01.10
 
 Przed upłynięciem tych terminów zajęcia odbywają się w formie nieobowiązkowych konsultacji projektowych (sale laboratoryjne lub p. 3.54) 
 

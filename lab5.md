@@ -4,9 +4,7 @@
 
 
 
-###  Cwiczenie 1
-Instrukcji <i> begin</i> zwykle uzywamy, gdy chcemy utworzyć zadanie o nieustrukturyzowanym  czasie trwania  
-
+###  Cwiczenie 1  
 Instrukcja <i>begin</i> powoduje utworzenie i asynchroniczne uruchomienie osobnego tasku wykonującego instrukcje po niej następującą: 
 ```chapel
 begin writeln("hello world");

@@ -21,6 +21,8 @@ Powyższy link pokazuje jeden ze sposobow zrownoleglania takiego problemu za pom
 * Należy zbadać dwie wersje podejścia do aktualnego minimum:
     * Wersja podstawowa  - wycinanie gałezi następuje w obrębie każdego tasku osobno, taski nie przesyłają sobie aktualnego minimum
     * Wersja rozszerzona - taski wymieniają aktualne minimum pomiedzy soba. 
+    
+* Należy przygotować sprawozdanie omawiające wyniki.
 
 ### Terminy:
 

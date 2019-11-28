@@ -14,18 +14,27 @@ Powyższy link pokazuje jeden ze sposobow zrownoleglania takiego problemu za pom
 
 ### Zadanie
 
-Zaimplementuj rownolegly algorytm branch and bound. Kolejne poddrzewa powinny być przydzielane do "głodnych" workerów.
-    należy zmierzyć jaka gruboziarnistość poddrzew jest oprymalna dla zaproponowanego rozwiązania. Czy dużo cienkich poddrzew, czy raczej mało grubych poddrzew? Przedstawić wykresy przyspieszenia i efektywności dla dwóch przypadkow grubosci poddrzew.
-    wersja podstawowa - wycinanie gałezi następuje w obrębie każdego tasku osobno, taski nie przesyłają sobie aktualnego minimum
-    wersja rozszerzona taski komunikują aktualne minimum pomiedzy soba. 
+* Zaimplementuj rownolegly algorytm branch and bound za pomocą znanych sobie narzędzi do programowania równoległego (preferowany Chapel, ale może tez byc MPI lub inne narzędzie poznane na TPR). 
+
+* Zbadać jaka gruboziarnistość poddrzew jest oprymalna dla zaproponowanego rozwiązania. Czy dużo cienkich poddrzew, czy raczej mało grubych poddrzew? Przedstawić wykresy przyspieszenia i efektywności dla dwóch przypadkow grubosci poddrzew.
+
+* Należy zbadać dwie wersje podejścia do aktualnego minimum:
+    * Wersja podstawowa  - wycinanie gałezi następuje w obrębie każdego tasku osobno, taski nie przesyłają sobie aktualnego minimum
+    * Wersja rozszerzona taski komunikują aktualne minimum pomiedzy soba. 
 
 ### Terminy:
 
-* Grupa pon 11:15 - 18.11
-* Grupa sr 14:40 - 20.11
-* Grupa czw 9:35 - 28.11
+* Grupa pon 11:15 - 13.11
+* Grupa sr 14:40 - 15.11
+* Grupa czw 9:35 - 16.11
 
 Przed upłynięciem tych terminów zajęcia odbywają się w formie nieobowiązkowych konsultacji projektowych (sale laboratoryjne lub p. 3.54) 
+
+Uwagi:
+
+* W  dniu 12.12 konsultacje nie odbędą się
+* W dniu 27.01.2020 jestem nieobecna  - prosze o oddanie zadań najpóźniej w tygodniu 20-23 stycznia !
+
 
 
 

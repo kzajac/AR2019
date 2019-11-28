@@ -266,10 +266,10 @@ TAIL: The end from task 2 of 4
 
 ### Wiecej informacji
 
-* [https://chapel-lang.org/tutorials/Oct2018/04-TaskPar.pdf](https://chapel-lang.org/tutorials/Oct2018/04-TaskPar.pdf)
-* [https://chapel-lang.org/docs/users-guide/index.html#task-parallelism](https://chapel-lang.org/docs/users-guide/index.html#task-parallelism)
-* [https://chapel-lang.org/docs/primers/syncsingle.html](https://chapel-lang.org/docs/primers/syncsingle.html)
-* [https://chapel-lang.org/docs/primers/atomics.html?highlight=atomic](https://chapel-lang.org/docs/primers/atomics.html?highlight=atomic)
+* Tutorial [https://chapel-lang.org/tutorials/Oct2018/04-TaskPar.pdf](https://chapel-lang.org/tutorials/Oct2018/04-TaskPar.pdf)
+* User guide [https://chapel-lang.org/docs/users-guide/index.html#task-parallelism](https://chapel-lang.org/docs/users-guide/index.html#task-parallelism)
+* Wiecej o zmiennych sync [https://chapel-lang.org/docs/primers/syncsingle.html](https://chapel-lang.org/docs/primers/syncsingle.html)
+* Wiecej o zmiennych atomic [https://chapel-lang.org/docs/primers/atomics.html?highlight=atomic](https://chapel-lang.org/docs/primers/atomics.html?highlight=atomic)
 
 
 ### Projekt

@@ -207,9 +207,30 @@ wynik
 9
 10
 ```
+### Przykład zastosowania do sekcji krytycznej:
 
+```chapel
+var lock$: sync bool;
 
+lock$ = true;
+ 
+critical_section();
 
+var lockval= lock$;
+```
+
+### Przykład zastosowania do utworzenia zmiennej future
+```chapel
+var future$: sync real;
+begin future$ = compute();
+res = computeSomethingElse();
+useComputedResults(future$, res);
+```
+
+### Wiecej informacji
+
+[https://chapel-lang.org/tutorials/Oct2018/04-TaskPar.pdf]
+[https://chapel-lang.org/docs/users-guide/index.html#task-parallelism]
 ### Zadanie
 *
 ### Projekt

@@ -229,7 +229,8 @@ useComputedResults(future$, res);
 
 ### Cwiczenie 6 
 
-Zmienne atomic
+Zmienne typu atomic - zmienne, na których działania tasków są atomowe (nie mogą być przerwane w trakcie).
+Również służą do komunikacji.
 
 ```chapel
 var count: atomic int, done: atomic bool;
@@ -267,6 +268,9 @@ TAIL: The end from task 2 of 4
 
 * [https://chapel-lang.org/tutorials/Oct2018/04-TaskPar.pdf](https://chapel-lang.org/tutorials/Oct2018/04-TaskPar.pdf)
 * [https://chapel-lang.org/docs/users-guide/index.html#task-parallelism](https://chapel-lang.org/docs/users-guide/index.html#task-parallelism)
+* [https://chapel-lang.org/docs/primers/syncsingle.html](https://chapel-lang.org/docs/primers/syncsingle.html)
+* [https://chapel-lang.org/docs/primers/atomics.html?highlight=atomic](https://chapel-lang.org/docs/primers/atomics.html?highlight=atomic)
+
 
 ### Projekt
 [https://github.com/kzajac/AR2019/blob/master/proj2.md](https://github.com/kzajac/AR2019/blob/master/proj2.md)

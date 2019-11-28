@@ -166,6 +166,50 @@ Hello from task 2 of 4
 All tasks done
 
 ```
+### Cwiczenie 5
+Taski moga działac na wspólnych zmiennych. Aby uniknąć wyścigu, stosujemy typ 'sync'
+
+```chapel
+var n: int =10;
+// typ ‘sync’ pamieta nie tylko wartosc, ale tez stan (empty/full)  
+// tutaj wartosci kazdego elementu buff$ są niezainicjalizowane, wiec startują ze stanem empty 
+var buff$: [0..n] sync int;
+var data: int;
+
+begin producer();
+consumer();
+
+proc producer() {
+  for i in 0..n {
+      buff$[i] = i;  // czekaj, az zmienna bedzie w stanie empty, zapisz jej nową wartosc, pozostaw w stanie pelny
+  }
+}
+
+proc consumer() {
+  for i in 0..n {
+        // czekaj az zmienna bedzie w stanie full, odczytaj jej warosc, pozostaw w stanie empty
+        data=buff$[i];
+        writeln(data);   
+  }
+}
+```
+wynik
+```bash
+0
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+```
+
+
+
 ### Zadanie
 *
 ### Projekt

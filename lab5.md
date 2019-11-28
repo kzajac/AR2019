@@ -229,9 +229,8 @@ useComputedResults(future$, res);
 
 ### Wiecej informacji
 
-[https://chapel-lang.org/tutorials/Oct2018/04-TaskPar.pdf]
-[https://chapel-lang.org/docs/users-guide/index.html#task-parallelism]
-### Zadanie
-*
+* [https://chapel-lang.org/tutorials/Oct2018/04-TaskPar.pdf](https://chapel-lang.org/tutorials/Oct2018/04-TaskPar.pdf)
+* [https://chapel-lang.org/docs/users-guide/index.html#task-parallelism](https://chapel-lang.org/docs/users-guide/index.html#task-parallelism)
+
 ### Projekt
 [https://github.com/kzajac/AR2019/blob/master/proj2.md](https://github.com/kzajac/AR2019/blob/master/proj2.md)

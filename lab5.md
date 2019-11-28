@@ -228,7 +228,7 @@ useComputedResults(future$, res);
 ### Cwiczenie 6 
 
 Zmienne typu atomic - zmienne, na których działania tasków są atomowe (nie mogą być przerwane w trakcie).
-Również służą do komunikacji.
+Również służą do synchronizacji.
 
 ```chapel
 var count: atomic int, done: atomic bool;

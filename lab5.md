@@ -145,7 +145,7 @@ Hello!
 Hello!
 Hello!
 ```
-### Cwieczenie 5
+### Cwiczenie 5
 Instrukcja coforall przyporządkowuje każdą iterację do osobnego tasku. Uzywamy, gdy potrzebujemy stworzyć zbiór homogenicznych zadań.
 Przydatna, gdy zadanie nadrzędne zależy od ukończenia się wszystkich zadań.
 ```chapel

@@ -227,6 +227,42 @@ res = computeSomethingElse();
 useComputedResults(future$, res);
 ```
 
+### Cwiczenie 6 
+
+Zmienne atomic
+
+```chapel
+var count: atomic int, done: atomic bool;
+config const numTasks = here.maxTaskPar;
+
+proc barrier(id) {
+  const myCount= count.fetchAdd(1);
+  if(myCount< numTasks-1) then {
+        writeln("Waiting ... ", id);
+        done.waitFor(true);
+        writeln("TAIL: The end from task ", id, " of ", numTasks);
+  }
+  else {
+    writeln("HEAD: I am the first to end ", id, " of ", numTasks );
+    done.testAndSet();
+   }
+}
+
+coforall i in 1..#numTasks {
+        barrier(i);
+}
+```
+Wynik
+```bash
+Waiting ... 1
+HEAD: I am the first to end 4 of 4
+Waiting ... 3
+TAIL: The end from task 1 of 4
+TAIL: The end from task 3 of 4
+Waiting ... 2
+TAIL: The end from task 2 of 4
+```
+
 ### Wiecej informacji
 
 * [https://chapel-lang.org/tutorials/Oct2018/04-TaskPar.pdf](https://chapel-lang.org/tutorials/Oct2018/04-TaskPar.pdf)

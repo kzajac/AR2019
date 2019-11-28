@@ -14,7 +14,7 @@ Powyższy link pokazuje jeden ze sposobow zrownoleglania takiego problemu za pom
 
 ### Zadanie
 
-* Zaimplementuj rownolegly algorytm branch and bound za pomocą znanych sobie narzędzi do programowania równoległego (preferowany Chapel, ale może tez byc MPI lub inne narzędzie poznane na TPR). 
+* Zaimplementuj rownolegly algorytm branch and bound za pomocą znanych sobie narzędzi do programowania równoległego (preferowany Chapel w wersji na jedym locale, ale może tez byc MPI lub inne narzędzie poznane na TPR). 
 
 * Zbadać jaka gruboziarnistość poddrzew jest oprymalna dla zaproponowanego rozwiązania. Czy dużo cienkich poddrzew, czy raczej mało grubych poddrzew? Przedstawić wykresy przyspieszenia i efektywności dla dwóch przypadkow grubosci poddrzew.
 

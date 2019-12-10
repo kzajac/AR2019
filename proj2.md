@@ -34,7 +34,7 @@ Przed upłynięciem tych terminów zajęcia odbywają się w formie nieobowiązk
 
 Uwagi:
 
-* W  dniu 12.12 konsultacje nie odbędą się
+* W  dniu 19.12 konsultacje nie odbędą się
 * W dniu 27.01.2020 jestem nieobecna  - prosze o oddanie zadań najpóźniej w tygodniu 20-23 stycznia !
 
 
